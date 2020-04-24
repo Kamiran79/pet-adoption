@@ -1,0 +1,73 @@
+
+body {
+    background-color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#pet {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.dino {
+    border: 5px solid cornflowerblue;
+    border-radius: 20px 0;
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    transition: border-radius 1s, background-color 1s;
+    background-color: white;
+  
+}
+
+.dino h2 {
+    text-align: center;
+    padding: 5px;
+    background-color: gray;
+    margin: 0;
+}
+
+.dino h3 {
+    text-align: center;
+}
+
+.dino p {
+    text-align: center;
+}
+
+.dino:hover {
+    background-color: darkkhaki;
+    border-radius: 0 20px;
+  }
+
+
+
+
+.dino img {
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    display:block
+    
+}
+
+.name1 {
+    background-color: rgb(32, 240, 240);
+    margin: 0;
+    padding: 0;
+}
+
+.name1:visited {
+    background-color: tomato;
+}
+
+.name2 {
+    background-color: green;
+}
+.name3 {
+    background-color: yellow;
+}
