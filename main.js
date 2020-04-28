@@ -217,10 +217,6 @@ const printToDom = (selector, textToPrint) => {
   selectedDiv.innerHTML = textToPrint;
 }
 
-function firstCap(word) {
-  return word.charAT(0).toUpperCase() + word.slice(1);
-}
-
 const buildPetCards = (petsCollection) => {
   let domStr ='';
   //const myCat = getEleme
@@ -250,168 +246,35 @@ console.log("before myTestFun");
 
 
 
-/* this is show cat*/ 
-const myCatFun = (petsCollection) => {
-  console.log(`${petsCollection}`);
-  let test = document.getElementById("myCat").name;
-  console.log("this is the test value: " + test);
-  let domStr ='';
-  for (let i = 0; i < petsCollection.length; i++) {
-      //var x = document.getElementById("myBtn");
-      if (petsCollection[i].type === test) {
-          domStr += '<div class="dino">';
-          domStr += `<h2>${petsCollection[i].name}</h2>`;
-          domStr += `<img src="${petsCollection[i].imageUrl}" alt="">`;
-          domStr += `<h3>${petsCollection[i].color}</h3>`;
-          domStr += `<p>${petsCollection[i].specialSkill}</p>`;
-          if (petsCollection[i].type === 'cat'){
-            domStr += `<h4 class="name1">${petsCollection[i].type}</h2>`;
-          }                             
-          domStr += '</div>';
-      }
+const filterPetsEvent = (event) => {
+  const buttonID = event.target.id;
+  const tempPetCollection = [];
+
+  if (buttonID === 'all') {
+    buildPetCards(pets);
+    return;
   }
-  console.log(domStr);
-  printToDom('#pet', domStr);  
-  test = '';
+
+  for (let i = 0; i < pets.length; i++) {
+    if (pets[i].type === buttonID) {
+      tempPetCollection.push(pets[i]);
+    }
+  }
+  buildPetCards(tempPetCollection);
 }
 
+const clickEvents = () => {
+  document.querySelector('#cat').addEventListener('click', filterPetsEvent);
+  document.querySelector('#dog').addEventListener('click', filterPetsEvent);
+  document.querySelector('#dino').addEventListener('click', filterPetsEvent);
+  document.querySelector('#all').addEventListener('click', filterPetsEvent);
+}
 
 
 const init = () => {
   buildPetCards(pets);
+  clickEvents();  
   //myTestFun(pets);
 }
 
 init();
-
-/*
-const myTestFun = petsCollection.filter(item => {
-    document.bgColor = red;
-    return item.type === 'cut';
-})
-*/
-
-
-
-
-/* this is show dog*/ 
-const myDogFun = (petsCollection) => {
-  console.log(`${petsCollection}`);
-  let test = document.getElementById("myDog").name;
-  console.log("this is the test value: " + test);
-  let domStr ='';
-  for (let i = 0; i < petsCollection.length; i++) {
-      //var x = document.getElementById("myBtn");
-      if (petsCollection[i].type === test) {
-          domStr += '<div class="dino">';
-          domStr += `<h2>${petsCollection[i].name}</h2>`;
-          domStr += `<img src="${petsCollection[i].imageUrl}" alt="">`;
-          domStr += `<h3>${petsCollection[i].color}</h3>`;
-          domStr += `<p>${petsCollection[i].specialSkill}</p>`;
-          if (petsCollection[i].type === test){
-            domStr += `<h4 class="name2">${petsCollection[i].type}</h2>`;
-          }                             
-          domStr += '</div>';
-      }
-  }
-  console.log(domStr);
-  printToDom('#pet', domStr);  
-  test = '';
-}
-
-
-/* this is show dino*/ 
-const myDinoFun = (petsCollection) => {
-  console.log(`${petsCollection}`);
-  let test = document.getElementById("myDino").name;
-  console.log("this is the test value: " + test);
-  let domStr ='';
-  for (let i = 0; i < petsCollection.length; i++) {
-      //var x = document.getElementById("myBtn");
-      if (petsCollection[i].type === test) {
-          domStr += '<div class="dino">';
-          domStr += `<h2>${petsCollection[i].name}</h2>`;
-          domStr += `<img src="${petsCollection[i].imageUrl}" alt="">`;
-          domStr += `<h3>${petsCollection[i].color}</h3>`;
-          domStr += `<p>${petsCollection[i].specialSkill}</p>`;
-          if (petsCollection[i].type === test){
-            domStr += `<h4 class="name3">${petsCollection[i].type}</h2>`;
-          }                             
-          domStr += '</div>';
-      }
-  }
-  console.log(domStr);
-  printToDom('#pet', domStr);  
-  test = '';
-}
-
-
-
-/* this is show all*/ 
-const myAllFun = (petsCollection) => {
-  console.log(`${petsCollection}`);
-  let test = document.getElementById("myCollection").name;
-  console.log("this is the test value: " + test);
-  let domStr ='';
-  for (let i = 0; i < petsCollection.length; i++) {
-      domStr += '<div class="dino">';
-      domStr += `<h2>${petsCollection[i].name}</h2>`;          
-      domStr += `<img src="${petsCollection[i].imageUrl}" alt="">`;
-      domStr += `<h3>${petsCollection[i].color}</h3>`;
-      domStr += `<p>${petsCollection[i].specialSkill}</p>`;
-      if (petsCollection[i].type === 'cat'){
-        domStr += `<h4 class="name1">${petsCollection[i].type}</h2>`;
-      }
-      if (petsCollection[i].type === 'dog'){
-        domStr += `<h4 class="name2">${petsCollection[i].type}</h2>`;
-      }
-      if (petsCollection[i].type === 'dino'){
-        domStr += `<h4 class="name3">${petsCollection[i].type}</h2>`;
-      }                    
-      
-      domStr += '</div>';
-  }
-  printToDom('#pet', domStr);          
-}
-
-/* Below is good codes, will make them remark just to test somthing */
-/*
-const buildPetCards = (petsCollection) => {
-    let domStr ='';
-
-    for (let i = 0; i < petsCollection.length; i++) {
-        domStr += '<div class="dino">';
-        domStr += `<h2>${petsCollection[i].name}</h2>`;          
-        domStr += `<img src="${petsCollection[i].imageUrl}" alt="">`;
-        domStr += `<h3>${petsCollection[i].color}</h3>`;
-        domStr += `<p>${petsCollection[i].specialSkill}</p>`;
-        if (petsCollection[i].type === 'cat'){
-          domStr += `<h4 class="name1">${petsCollection[i].type}</h2>`;
-        }
-        if (petsCollection[i].type === 'dog'){
-          domStr += `<h4 class="name2">${petsCollection[i].type}</h2>`;
-        }
-        if (petsCollection[i].type === 'dino'){
-          domStr += `<h4 class="name3">${petsCollection[i].type}</h2>`;
-        }                    
-        
-        domStr += '</div>';
-    }
-    printToDom('#pet', domStr);          
-}
-
-*/  
-/* I wil apply the code above try with the funcion to see what will happen */
-
-/*
-function myTestFun(petType) {
-  alert("it is working");
-  if (petType === 'cat') {
-      alert("you click on cat");
-      buildPetCards(pets.filter(petType));
-
-  }
-  document.bgColor = "red";
-}
-
-*/
