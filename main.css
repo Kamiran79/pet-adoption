@@ -83,7 +83,7 @@ body {
 .dino img {
     object-fit: cover;
     width: 180px;
-    height: 190px;    
+    /* height: 190px; */
     padding: 10px;
     border-radius: 5px;
     margin-top: 10px;
@@ -125,7 +125,7 @@ body {
     margin: auto;
     padding: 15px 0 15px 0;            
     position: relative;
-    bottom: 47px;
+    bottom: -24px;
     border: 1px solid #BCE8F1;
     border-radius: 5px;
     text-transform:capitalize;
@@ -142,7 +142,7 @@ body {
     margin: auto;
     padding: 15px 0 15px 0;            
     position: relative;
-    bottom: 47px;
+    bottom: -24px;
     border-bottom: 1px solid #DDF3F8;
     border-radius: 5px;
     text-transform:capitalize;
@@ -154,7 +154,7 @@ body {
     margin: auto;
     padding: 15px 0 15px 0;            
     position: relative;
-    bottom: 47px;
+    bottom: -24px;
     border-bottom: 1px solid #FBF1D9;
     border-radius: 5px;  
     text-transform:capitalize;  
