@@ -17,3 +17,6 @@ This exercise using javascripts and bootstrap for styling.
 ## Screenshots
 
 ![pets](https://github.com/Kamiran79/pet-adoption/blob/master/screenshots/Screen%20Shot%202020-06-14%20at%2010.23.06%20PM.png)
+
+## Contributors:
+* [Kamiran Ibrahim](https://github.com/Kamiran79)
