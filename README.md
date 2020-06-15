@@ -15,4 +15,4 @@ This exercise using javascripts and bootstrap for styling.
 1. Visit the server in your browser (defaults to localhost:8080)
 
 ## Screenshots
-! [pets](./screenshots/Screen Shot 2020-06-14 at 10.23.06 PM.png)
+! [pets](https://github.com/Kamiran79/pet-adoption/blob/master/screenshots/Screen%20Shot%202020-06-14%20at%2010.23.06%20PM.png)
